@@ -1,0 +1,25 @@
+<h1 style="text-align:center">接口说明</h1>
+  <p>      1：所有接口的请求参数需要订单号(order_no)
+    <br/>     订单号生成规则：年月日时分+4位随机字母，14位。例如1604221837yymd
+    <br/>  2：所有接口的请求参数需要频道(channel)
+    <br/>     苹果的频道是 65IOS1
+    <br/>     安卓的频道是 66NDR1
+    <br/>     H5的频道是 00HH51
+    <br/>  3：所有接口的请求参数需要签名(sign)
+    <br/>  3.1: H5的频道 00HH51 暂不检查签名
+    <br/>  3.2: 签名需要私钥
+    <br/>  私钥的意义在于只参与加密，不参与传输。
+    <br/>  3.3: 接口签名方法
+    <br/>  step1.将所有请求参数按照A-Z-a-z进行排序。
+    <br/>  step2.排序完成后用&进行拼接。例如
+    <br/>  channel=00IOS1&mobile=15822222222&order_no=1604221837yymd&service=fast_reg&sms=328594
+    <br/>  step3.在最后加上32位的私钥。例如
+    <br/>  channel=00IOS1&mobile=15822222222&order_no=1604221837yymd&service=fast_reg&sms=32859432位私钥
+    <br/>  step4.MD5加密。md5加密后得到值例如abcdefg
+    <br/>  step5.最后你的表单就变成channel=00IOS1 order_no=1604221837yymd mobile=15822222222 service=fast_reg sms=328594 sign=abcdefg 把这六个参数一并提交过来(这六个参数没有顺序之分)
+    <br/>  4：所有接口的请求参数需要service(service)
+    <br/>     每个接口有唯一的service
+    <br/>  5：所有接口的请求方式都是POST
+    <br/>  6：所有接口的请求地址都是一个
+    <br/>     测试服 http://112.74.79.13/
+  </p>

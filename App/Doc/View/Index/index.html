@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>APP接口说明</title>
+<style type="text/css">
+  body {
+    margin: 0px;
+    padding: 0px;
+  }
+  table, body {
+    font-size: 14px;
+    line-height: 1.8em;
+    font-family: "Open Sans", Arial, "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun, sans-serif;
+    color: #747f8c;
+  }
+  .box {
+    width: 900px;
+    margin-right: auto;
+    margin-left: 270px;
+  }
+  h1, h2, h3, h4, h5, h6, a {
+    color: #38485a;
+  }
+  small {
+    color: #999;
+  }
+  td {
+    border-bottom: solid 1px #CCCCCC;
+    padding: 5px;
+  }
+  .tableTitle {
+    background-color: #EBEBEB;
+    font-weight: bold;
+    color: #000;
+  }
+  .info {
+    color: #999;
+  }
+  #listbox {
+    position:absolute;
+    z-index:1;
+    background-color:#FFF;
+    top:10px;
+    left:10px;
+    border:solid 1px #CCC;
+    border-radius:10px;
+    padding:15px;
+  }
+  a {
+    text-decoration:none;
+    color:#294E5B;
+  }
+  #listbox a {
+    display:block;
+  }
+</style>
+<script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+</head>
+
+<body>
+<div id="listbox">
+  <h1 style="text-align:center;">目录</h1>
+</div>
+<div class="box">
+  <include file='_common' />
+  <!-- #11 -->
+  <include file='_s11_follow_maker' />
+  <!-- #12 -->
+  <include file='_s12_unfollow_maker' />
+  <!-- #13 -->
+  <include file='_s13_click_liked' />
+  <!-- #14 -->
+  <include file='_s14_click_share' />
+  <!-- #15 -->
+  <include file='_s15_discovery' />
+  <!-- #16 -->
+  <include file='_s16_video_detail' />
+  <!-- #17 -->
+  <include file='_s17_follow_list_maker' />
+  <!-- #18 -->
+  <include file='_s18_recommend_maker_list' />
+  <!-- #21 -->
+  <include file='_s21_my_center' />
+  <!-- #22 -->
+  <include file='_s22_my_video_list' />
+  <!-- #23 -->
+  <include file='_s23_my_project_list' />
+  <!-- #31 -->
+  <include file='_s31_maker_center' />
+  <!-- #32 -->
+  <include file='_s32_maker_video_list' />
+  <!-- #41 -->
+  <include file='_s41_write_topic' />
+  <!-- #42 -->
+  <include file='_s42_topic_list' />
+  <!-- #43 -->
+  <include file='_s43_write_comment' />
+  <!-- #44 -->
+  <include file='_s44_comment_list' />
+  <!-- #51 -->
+  <include file='_s51_search_ugc_tags' />
+  <!-- #52 -->
+  <include file='_s52_submit_ugc_video' />
+  <!-- #53 -->
+  <include file='_s53_list_draft_ugc_videos' />
+  <!-- #54 -->
+  <include file='_s54_delete_ugc_video' />
+  <!-- #55 -->
+  <include file='_s55_fetch_ugc_video' />
+  <!-- #56 -->
+  <include file='_s56_search_video_project' />
+  <!-- #57 -->
+  <include file='_s57_hot_tags' />
+  <!-- #58 -->
+  <include file='_s58_tag_detail' />
+  <!-- #59 -->
+  <include file='_s59_hot_videos' />
+  <!-- 5a -->
+  <include file='_s5a_top_makers' />
+  <!-- 5b -->
+  <include file='_s5b_hot_projects' />
+  <!-- 5c -->
+  <include file='_s5c_check_version' />
+  <!-- 5d -->
+  <include file='_s5d_liked_man' />
+  <!-- #61 -->
+  <include file='_s61_cos_sign' />
+  <!-- #71 -->
+  <include file='_s71_my_message' />
+  <!-- #72 -->
+  <include file='_s72_like_message' />
+  <!-- #73 -->
+  <include file='_s73_follow_message' />
+  <!-- #74 -->
+  <include file='_s74_comment_message' />
+  <!-- #81 -->
+  <include file='_s81_goods_list' />
+  <!-- #82 -->
+  <include file='_s82a_collect_goods' />
+  <include file='_s82b_collect_goods' />
+  <!-- #83 -->
+  <include file='_s83_goods_shop' />
+  <!-- #84 -->
+  <include file='_s84_goods_collect_list' />
+</div>
+<script>
+  var html = $('#listbox').html();
+  $('h2').each(function(index, element) {
+    $(element).prepend('<a name="'+index+'"></a>');
+      html += '<a href="#'+$(element).find('a').attr('name')+'">'+$(element).text()+'</a>';
+  });
+  $('#listbox').html(html);
+</script>
+</body>
+</html>

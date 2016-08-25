@@ -1,0 +1,74 @@
+  <h2>6.视频详情</h2>
+    接口地址：测试url<br>
+    请求方式：POST
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <include file='_repeat_req' />
+      <tr>
+        <td>service</td>
+        <td>文本</td>
+        <td>是</td>
+        <td>video_detail</td>
+      </tr>
+      <tr>
+        <td>my_user_id</td>
+        <td>文本</td>
+        <td>否</td>
+        <td>当前用户的user_id</td>
+      </tr>
+      <tr>
+        <td>video_id</td>
+        <td>文本</td>
+        <td>是</td>
+        <td>视频id</td>
+      </tr>
+    </table>
+    <p>返回JSON值说明：</p>
+    <ul>
+      <li>res <span class="info">状态，true/false 请求成功或者失败的判别</span></li>
+      <li>msg <span class="info">消息</span></li>
+      <li>code <span class="info">特定情况下返回，001签名错误，002必须参数不完整(参数为空)</span></li>
+      
+      <li>video <span class="info">视频详情</span>
+        <ul>
+            <li>type <span class="info">video(类型)</span></li>
+            <li>is_liked <span class="info">当前用户(my_user_id)是否点赞过</span></li>
+            <li>id           <span class="info">video_id</span></li>
+            <li>pub_time     <span class="info">发布时间</span></li>
+            <li>user_id      <span class="info">发布创客的user_id</span></li>
+            <li>user_name    <span class="info">发布创客的名称</span></li>
+            <li>user_avatar  <span class="info">发布创客的头像</span></li>
+            <li>video_url    <span class="info">视频url</span></li>
+            <li>title        <span class="info">视频标题</span></li>
+            <li>photo        <span class="info">视频封面图</span></li>
+            <li>introduction <span class="info">视频简介</span></li>
+            <li>view_times   <span class="info">浏览量</span></li>
+            <li>comments     <span class="info">评论数</span></li>
+            <li>liked        <span class="info">点赞数</span></li>
+            <li>collection   <span class="info">分享数</span></li>
+            <li>hot          <span class="info">热度</span></li>
+          <li>tags         <span class="info">视频标签, 数组</span></li>
+          <li>content      <span class="info">视频内容</span></li>
+          <li>fan_sum      <span class="info">发布创客的粉丝数</span></li>
+          <li>fan_list     <span class="info">发布创客的最新关注的6个粉丝</span></li>
+          <li>is_followed  <span class="info">当前用户(my_user_id)是否关注发布创客</span></li>
+        </ul>
+      </li>
+
+      <li>comment <span class="info">视频评论, 数组, 包含多个【一级评论元数据】</span>
+       <ul>
+        <li>一级评论元数据 <span class="info">同接口 <a href="#14">42.一级评论列表</a></span></li>
+       </ul>
+      </li>
+
+      <li>project <span class="info">正在众筹的项目, 数组, 包含多个【众筹元数据】</span>
+       <ul>
+        <li>众筹元数据 <span class="info">同接口 <a href="#4">5.发现</a></span></li>
+       </ul>
+      </li>
+
+      <li>you_may_like <span class="info">猜你喜欢, 数组, 包含多个【视频元数据】</span>
+       <ul>
+        <li>视频元数据 <span class="info">同接口 <a href="#4">5.发现</a></span></li>
+       </ul>
+      </li>
+    </ul>

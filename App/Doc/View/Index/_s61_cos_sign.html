@@ -1,0 +1,19 @@
+  <h2>61.COS签名</h2>
+    接口地址：测试url<br>
+    请求方式：POST
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <include file='_repeat_req' />
+      <tr>
+        <td>service</td>
+        <td>文本</td>
+        <td>是</td>
+        <td>cos_sign</td>
+      </tr>
+    </table>
+    <p>返回JSON值说明：</p>
+    <ul>
+      <li>res <span class="info">状态，true/false 请求成功或者失败的判别</span></li>
+      <li>msg <span class="info">消息</span></li>
+      <li>code <span class="info">特定情况下返回，001签名错误，002必须参数不完整(参数为空)</span></li>
+      <li>data <span class="info">COS签名</span></li>
+    </ul>

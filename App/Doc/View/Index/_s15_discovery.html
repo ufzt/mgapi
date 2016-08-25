@@ -1,0 +1,112 @@
+  <h2>5.发现</h2>
+    接口地址：测试url<br>
+    请求方式：POST
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <include file='_repeat_req' />
+      <tr>
+        <td>service</td>
+        <td>文本</td>
+        <td>是</td>
+        <td>discovery</td>
+      </tr>
+      <tr>
+        <td>my_user_id</td>
+        <td>文本</td>
+        <td>否</td>
+        <td>当前用户的user_id</td>
+      </tr>
+      <tr>
+        <td>branch</td>
+        <td>文本</td>
+        <td>否</td>
+        <td>分类名称 recommend|super_equipment|cosmic_sky等, 默认recommend</td>
+      </tr>
+      <tr>
+        <td>sort_type</td>
+        <td>文本</td>
+        <td>否</td>
+        <td>排序类型 1|2|3 1最新,2最热,3关注, 默认1</td>
+      </tr>
+      <tr>
+        <td>current_page</td>
+        <td>文本</td>
+        <td>否</td>
+        <td>当前页数, 默认1</td>
+      </tr>
+      <tr>
+        <td>page_size</td>
+        <td>文本</td>
+        <td>否</td>
+        <td>每页的视频数量, 默认20</td>
+      </tr>
+    </table>
+    <p>返回JSON值说明：</p>
+    <ul>
+      <li>res <span class="info">状态，true/false 请求成功或者失败的判别</span></li>
+      <li>msg <span class="info">消息</span></li>
+      <li>code <span class="info">特定情况下返回，001签名错误，002必须参数不完整(参数为空)</span></li>
+      <li>banner2 <span class="info">数组，包含多个【banner元数据】</span>
+       <ul>
+        <li>banner元数据
+          <ul>
+            <li>id<span class="info">轮播图id</span></li>
+            <li>type<span class="info">轮播类型</span></li>
+            <li>value<span class="info">轮播图类型的id或者url</span></li>
+            <li>photo_url<span class="info">轮播图的链接</span></li>
+            <li>is_recommend<span class="info">1:默认推荐/上架</span></li>
+            <li>recommend_time<span class="info">推荐/上架时间</span></li>
+            <li>update_admin<span class="info">更新人</span></li>
+          </ul>
+        </li>
+       </ul>
+      </li>
+      <li>user <span class="info">当前用户(my_user_id)的关注创客, 数组, 包含多个user_id</span></li>
+      <li>branch <span class="info">视频项目的分类, 数组，包含多个分类</span></li>
+      <li>data <span class="info">发现列表, 数组, 包含多个【视频元数据】和【众筹元数据】</span>
+       <ul>
+        <li>视频元数据
+          <ul>
+            <li>type <span class="info">video(类型)</span></li>
+            <li>is_liked <span class="info">当前用户(my_user_id)是否点赞过</span></li>
+            <li>id           <span class="info">视频id</span></li>
+            <li>pub_time     <span class="info">发布时间</span></li>
+            <li>user_id      <span class="info">发布创客的user_id</span></li>
+            <li>user_name    <span class="info">发布创客的名称</span></li>
+            <li>user_avatar  <span class="info">发布创客的头像</span></li>
+            <li>video_url    <span class="info">视频url</span></li>
+            <li>title        <span class="info">视频标题</span></li>
+            <li>photo        <span class="info">视频封面图</span></li>
+            <li>introduction <span class="info">视频简介</span></li>
+            <li>view_times   <span class="info">浏览量</span></li>
+            <li>comments     <span class="info">话题数</span></li>
+            <li>liked        <span class="info">点赞数</span></li>
+            <li>collection   <span class="info">分享数</span></li>
+            <li>hot          <span class="info">热度</span></li>
+          </ul>
+        </li>
+        <li>众筹元数据
+          <ul>
+            <li>type <span class="info">project(类型)</span></li>
+            <li>is_liked <span class="info">当前用户(my_user_id)是否点赞过</span></li>
+            <li>id           <span class="info">众筹id</span></li>
+            <li>pub_time     <span class="info">发布时间</span></li>
+            <li>user_id      <span class="info">发布创客的user_id</span></li>
+            <li>user_name    <span class="info">发布创客的名称</span></li>
+            <li>user_avatar  <span class="info">发布创客的头像</span></li>
+            <li>video_url    <span class="info"></span></li>
+            <li>p_photo      <span class="info"></span></li>
+            <li>p_summary    <span class="info"></span></li>
+            <li>p_name       <span class="info"></span></li>
+            <li>p_current_money <span class="info"></span></li>
+            <li>progress     <span class="info"></span></li>
+            <li>p_days       <span class="info"></span></li>
+            <li>view_times   <span class="info">浏览量</span></li>
+            <li>comments     <span class="info">话题数</span></li>
+            <li>liked        <span class="info">点赞数</span></li>
+            <li>collection   <span class="info">分享数</span></li>
+            <li>hot          <span class="info">热度</span></li>
+          </ul>
+        </li>
+       </ul>
+      </li>
+    </ul>

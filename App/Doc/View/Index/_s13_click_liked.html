@@ -1,0 +1,36 @@
+  <h2>3.点赞</h2>
+    接口地址：测试url<br>
+    请求方式：POST
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <include file='_repeat_req' />
+      <tr>
+        <td>service</td>
+        <td>文本</td>
+        <td>是</td>
+        <td>click_liked</td>
+      </tr>
+      <tr>
+        <td>my_user_id</td>
+        <td>文本</td>
+        <td>是</td>
+        <td>当前用户的user_id</td>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td>文本</td>
+        <td>是</td>
+        <td>类型 视频/众筹/话题 3选1 video|project|comment</td>
+      </tr>
+      <tr>
+        <td>relation_id</td>
+        <td>文本</td>
+        <td>是</td>
+        <td>video|project|comment 的id</td>
+      </tr>
+    </table>
+    <p>返回JSON值说明：</p>
+    <ul>
+      <li>res <span class="info">状态，true/false 请求成功或者失败的判别</span></li>
+      <li>msg <span class="info">消息</span></li>
+      <li>code <span class="info">特定情况下返回，001签名错误，002必须参数不完整(参数为空)</span></li>
+    </ul>

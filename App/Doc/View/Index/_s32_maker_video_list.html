@@ -1,0 +1,47 @@
+  <h2>32.TA的个人中心更多视频</h2>
+    接口地址：测试url<br>
+    请求方式：POST
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <include file='_repeat_req' />
+      <tr>
+        <td>service</td>
+        <td>文本</td>
+        <td>是</td>
+        <td>maker_video_list</td>
+      </tr>
+      <tr>
+        <td>my_user_id</td>
+        <td>文本</td>
+        <td>否</td>
+        <td>当前用户的user_id</td>
+      </tr>
+      <tr>
+        <td>other_user_id</td>
+        <td>文本</td>
+        <td>是</td>
+        <td>其他的用户的user_id</td>
+      </tr>
+      <tr>
+        <td>current_page</td>
+        <td>文本</td>
+        <td>是</td>
+        <td>分页参数，页码从1开始，默认值是1。</td>
+      </tr>
+      <tr>
+        <td>page_size</td>
+        <td>文本</td>
+        <td>是</td>
+        <td>分页参数，每页显示的视频数量，默认值是20。</td>
+      </tr>
+    </table>
+    <p>返回JSON值说明：</p>
+    <ul>
+      <li>res <span class="info">状态，true/false 请求成功或者失败的判别</span></li>
+      <li>msg <span class="info">消息</span></li>
+      <li>code <span class="info">特定情况下返回，001签名错误，002必须参数不完整(参数为空)</span></li>
+      <li>video <span class="info">视频列表, 数组, 包含多个【视频元数据】</span>
+       <ul>
+        <li>视频元数据 <span class="info">同接口 <a href="#4">5.发现</a></span></li>
+       </ul>
+      </li>
+    </ul>

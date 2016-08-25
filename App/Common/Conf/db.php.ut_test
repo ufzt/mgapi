@@ -1,0 +1,12 @@
+<?php
+
+return array(
+  //数据库配置
+  'DB_TYPE'       => 'mysql',
+  'DB_HOST'       => '127.0.0.1',
+  'DB_NAME'       => 'ut4_test',
+  'DB_USER'       => 'ut_test',
+  'DB_PWD'        => 'ut123',
+  'DB_PORT'       => '3306',
+  'DB_PREFIX'     => 'site_',
+);

@@ -1,0 +1,20 @@
+<?php
+
+if (version_compare(PHP_VERSION, '5.3.0', '<')) {
+  die('require PHP > 5.3.0 !');
+}
+
+//define('APP_DEBUG', true);
+define('APP_PATH',    './App/');
+define('RUNTIME_PATH','./Runtime/');
+
+// 缺省路由
+$paths = explode('/',$_SERVER['PHP_SELF']);
+if (count($paths)>2
+    && 'Home'!= ucfirst($paths[2])
+    && 'Doc'!= ucfirst($paths[2]) ) {
+  define('BIND_MODULE','Home');
+}
+
+// 引入ThinkPHP入口文件
+require './ThinkPHP/ThinkPHP.php';

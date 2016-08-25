@@ -1,0 +1,63 @@
+  <h2>58.话题详情</h2>
+    接口地址：测试url<br>
+    请求方式：POST
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <include file='_repeat_req' />
+      <tr>
+        <td>service</td>
+        <td>文本</td>
+        <td>是</td>
+        <td>tag_detail</td>
+      </tr>
+      <tr>
+        <td>tag_id</td>
+        <td>文本</td>
+        <td>是</td>
+        <td>tag id</td>
+      </tr>
+      <tr>
+        <td>my_user_id</td>
+        <td>文本</td>
+        <td>否</td>
+        <td>当前用户的user_id</td>
+      </tr>
+      <tr>
+        <td>current_page</td>
+        <td>文本</td>
+        <td>否</td>
+        <td>当前页数, 默认1</td>
+      </tr>
+      <tr>
+        <td>page_size</td>
+        <td>文本</td>
+        <td>否</td>
+        <td>每页的视频数量, 默认20</td>
+      </tr>
+    </table>
+    <p>返回JSON值说明：</p>
+    <ul>
+      <li>res <span class="info">状态，true/false 请求成功或者失败的判别</span></li>
+      <li>msg <span class="info">消息</span></li>
+      <li>code <span class="info">特定情况下返回，001签名错误，002必须参数不完整(参数为空)</span></li>
+      <li>count <span class="info">话题对应的视频总数</span></li>
+      <li>tag <span class="info">话题详情</span>
+          <ul>
+            <li>id           <span class="info">话题id</span></li>
+            <li>is_recommend        <span class="info">是否推荐</span></li>
+            <li>name   <span class="info">话题名</span></li>
+            <li>photo_url   <span class="info">封面图</span></li>
+            <li>bg_photo_url  <span class="info">背景图</span></li>
+            <li>intro        <span class="info">简介</span></li>
+            <li>is_hot   <span class="info">是否热门</span></li>
+            <li>view_sum   <span class="info">浏览数</span></li>
+            <li>collect_sum  <span class="info">分享数</span></li>
+            <li>pub_times  <span class="info">关联次数</span></li>
+          </ul>
+      </li>
+      <li>video <span class="info">视频列表, 数组, 包含多个【视频元数据】</span>
+       <ul>
+        <li>视频元数据 <span class="info">同接口 <a href="#4">5.发现</a></span></li>
+       </ul>
+      </li>
+    </ul>
+    

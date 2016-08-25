@@ -1,0 +1,22 @@
+<?php
+
+$config = array(
+  # {ThinkPHP}配置
+  'SESSION_AUTO_START' => false,
+  'LOG_RECORD' => true,
+  'LOG_LEVEL'  => 'ALERT,NOTIC, ERR,DEBUG, ',
+
+  # API配置
+  'token'   => 'your-private-token',
+  'service' => include "service.php",
+
+  # 腾讯云配置
+  'cos' => array(
+    'user_bucket'  => 'app',
+    'admin_bucket' => 'admin',
+    'admin_bucket_url' => 'http://admin-10049250.file.myqcloud.com',
+  ),
+);
+
+$db = include "db.php";
+return array_merge($db, $config);

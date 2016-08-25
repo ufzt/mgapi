@@ -1,0 +1,54 @@
+  <h2>21.我的个人中心</h2>
+    接口地址：测试url<br>
+    请求方式：POST
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <include file='_repeat_req' />
+      <tr>
+        <td>service</td>
+        <td>文本</td>
+        <td>是</td>
+        <td>my_center</td>
+      </tr>
+      <tr>
+        <td>my_user_id</td>
+        <td>文本</td>
+        <td>是</td>
+        <td>当前用户的user_id</td>
+      </tr>
+    </table>
+    <p>返回JSON值说明：</p>
+    <ul>
+      <li>res <span class="info">状态，true/false 请求成功或者失败的判别</span></li>
+      <li>msg <span class="info">消息</span></li>
+      <li>code <span class="info">特定情况下返回，001签名错误，002必须参数不完整(参数为空)</span></li>
+      <li>data <span class="info">当前用户的相关信息</span>
+        <ul>
+          <li>user_id<span class="info">     当前用户ID</span></li>
+          <li>user_name<span class="info">   用户名</span></li>
+          <li>user_avatar<span class="info"> 用户头像</span></li>
+          <li>province<span class="info">    用户地区 省市区</span></li>
+          <li>gender<span class="info">      用户性别</span></li>
+          <li>fans<span class="info">        用户粉丝数</span></li>
+          <li>follow<span class="info">      用户关注数</span></li>
+          <li>introduction<span class="info">用户个人介绍</span></li>
+          <li>creative<span class="info">    用户创造力</span></li>
+          <li>videos<span class="info">      用户视频数</span></li>
+          <li>projects<span class="info">    用户众筹数</span></li>
+          <li>orders<span class="info">      用户订单数</span></li>
+          <li>ugc_draft_sum<span class="info">  草稿箱数量</span></li>
+          <li>collect_sum<span class="info">  收藏商品数量</span></li>
+        </ul>
+      </li>
+      <li>video <span class="info">视频列表, 数组, 包含多个【视频元数据】</span>
+       <ul>
+        <li>视频元数据 <span class="info">同接口 <a href="#4">5.发现</a></span></li>
+       </ul>
+      </li>
+      <li>project <span class="info">项目列表, 数组, 包含多个【众筹元数据】</span>
+       <ul>
+        <li>众筹元数据 <span class="info">同接口 <a href="#4">5.发现</a></span></li>
+       </ul>
+      </li>
+    </ul>
+
+

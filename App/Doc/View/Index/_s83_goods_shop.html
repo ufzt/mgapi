@@ -1,0 +1,53 @@
+  <h2>83.商城首页</h2>
+    接口地址：测试url<br>
+    请求方式：POST
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <include file='_repeat_req' />
+      <tr>
+        <td>service</td>
+        <td>文本</td>
+        <td>是</td>
+        <td>goods_shop</td>
+      </tr>
+      <tr>
+        <td>my_user_id</td>
+        <td>文本</td>
+        <td>否</td>
+        <td>用户id</td>
+      </tr>
+    </table>
+    <p>返回JSON值说明：</p>
+    <ul>
+      <li>res <span class="info">状态，true/false 请求成功或者失败的判别</span></li>
+      <li>msg <span class="info">消息</span></li>
+      <li>code <span class="info">特定情况下返回，001签名错误，002必须参数不完整(参数为空)</span></li>
+      <li>data <span class="info">商品首页</span>
+        <ul>
+          <li>collect_sum <span class="info">用户商品收藏总数</span></li>
+          <li>banner <span class="info">轮播图，数组，包含多个轮播图URL</span></li>
+          <li>branch <span class="info">商品分类图标，数组，包含多个【分类图标元数据】</span>
+            <ul>
+             <li>分类图标元数据
+              <ul>
+                <li>name<span class="info">分类名</span></li>
+                <li>image<span class="info">图标URL</span></li>
+              </ul>
+            </li>
+           </ul>
+          </li>
+          <li>theme <span class="info">主题商品列表，数组，包含多个【主题元数据】</span>
+            <ul>
+              <li>主题元数据 <span class="info">商品列表，数组，包含多个【商品元数据】</span>
+               <ul>
+                <li>商品元数据
+                  <ul>
+                    <li>商品元数据 <span class="info">同接口 <a href="#35">8.1.商品列表</a></span></li>
+                  </ul>
+                </li>
+               </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>

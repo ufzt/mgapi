@@ -1,0 +1,54 @@
+  <h2>74.评论通知列表</h2>
+    接口地址：测试url<br>
+    请求方式：POST
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <include file='_repeat_req' />
+      <tr>
+        <td>service</td>
+        <td>文本</td>
+        <td>是</td>
+        <td>comment_message_list</td>
+      </tr>
+      <tr>
+        <td>my_user_id</td>
+        <td>文本</td>
+        <td>是</td>
+        <td>当前用户的user_id</td>
+      </tr>
+      <tr>
+        <td>current_page</td>
+        <td>文本</td>
+        <td>否</td>
+        <td>当前页数, 默认1</td>
+      </tr>
+      <tr>
+        <td>page_size</td>
+        <td>文本</td>
+        <td>否</td>
+        <td>每页的视频数量, 默认20</td>
+      </tr>
+    </table>
+    <p>返回JSON值说明：</p>
+    <ul>
+      <li>res <span class="info">状态，true/false 请求成功或者失败的判别</span></li>
+      <li>msg <span class="info">消息</span></li>
+      <li>code <span class="info">特定情况下返回，001签名错误，002必须参数不完整(参数为空)</span></li>
+      <li>count <span class="info">消息总数</span></li>
+      <li>data <span class="info">消息列表，数组，包含多个【消息元数据】</span>
+       <ul>
+        <li>消息元数据
+          <ul>
+            <li>id<span class="info">评论记录id</span></li>
+            <li>userid<span class="info">去评论的用户ID</span></li>
+            <li>topid<span class="info">评论的对应项目|视频|评论的ID</span></li>
+            <li>addtime<span class="info">评论添加时间</span></li>
+            <li>type<span class="info">评论的类型：项目|视频|评论</span></li>
+            <li>photo_url<span class="info">评论的对应项目|视频|评论的图片URL</span></li>
+            <li>user_name<span class="info">评论用户名</span></li>
+            <li>user_avatar<span class="info">评论用户头像</span></li>
+          </ul>
+        </li>
+       </ul>
+      </li>
+      </li>
+    </ul>

@@ -1,0 +1,92 @@
+  <h2>44.二级评论列表</h2>
+    接口地址：测试url<br>
+    请求方式：POST
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <include file='_repeat_req' />
+      <tr>
+        <td>service</td>
+        <td>文本</td>
+        <td>是</td>
+        <td>comment_list</td>
+      </tr>
+      <tr>
+        <td>my_user_id</td>
+        <td>文本</td>
+        <td>否</td>
+        <td>当前用户的user_id</td>
+      </tr>
+      <tr>
+        <td>type</td>
+        <td>文本</td>
+        <td>是</td>
+        <td>类型 comment</td>
+      </tr>
+      <tr>
+        <td>relation_id</td>
+        <td>文本</td>
+        <td>是</td>
+        <td>一级评论的 comment_id</td>
+      </tr>
+      <tr>
+        <td>current_page</td>
+        <td>文本</td>
+        <td>否</td>
+        <td>分页参数，页码从1开始，默认值是1。</td>
+      </tr>
+      <tr>
+        <td>page_size</td>
+        <td>文本</td>
+        <td>否</td>
+        <td>分页参数，每页显示的视频数量，默认值是20。</td>
+      </tr>
+    </table>
+    <p>返回JSON值说明：</p>
+    <ul>
+      <li>res <span class="info">状态，true/false 请求成功或者失败的判别</span></li>
+      <li>msg <span class="info">消息</span></li>
+      <li>code <span class="info">特定情况下返回，001签名错误，002必须参数不完整(参数为空)</span></li>
+      <li>top <span class="info">数组, 一级评论相关信息</span>
+       <ul>
+        <li>liked_sum <span class="info">赞过人的数量</span></li>
+       </ul>
+       <ul>
+        <li>liked <span class="info">数组, 赞过的人的头像URL</span></li>
+       </ul>
+       <ul>
+        <li>detail <span class="info">一级评论相关信息, 数组</span></li>
+          <ul>
+            <li>id <span class="info">评论id</span></li>
+            <li>user_id <span class="info">用户ID</span></li>
+            <li>topid           <span class="info">项目id</span></li>
+            <li>type        <span class="info">评论类型</span></li>
+            <li>pub_time     <span class="info">评论时间</span></li>
+            <li>text      <span class="info">评论内容</span></li>
+            <li>liked    <span class="info">赞过的次数</span></li>
+            <li>is_liked  <span class="info">当前用户是否点赞</span></li>
+            <li>user_name         <span class="info">评论用户名</span></li>
+            <li>user_avatar        <span class="info">评论用户头像</span></li>
+          </ul>
+        </li>
+       </ul>
+      </li>
+      <li>comment <span class="info">数组, 包含多个【二级评论元数据】</span>
+       <ul>
+        <li>二级评论元数据
+          <ul>
+            <li>type <span class="info">comment(类型)</span></li>
+            <li>is_liked <span class="info">当前用户(my_user_id)是否点赞过</span></li>
+            <li>id           <span class="info">二级评论id</span></li>
+              <li>pid        <span class="info">一级评论id</span></li>
+            <li>pub_time     <span class="info">发布时间</span></li>
+            <li>user_id      <span class="info">发布创客的user_id</span></li>
+            <li>user_name    <span class="info">发布创客的名称</span></li>
+            <li>user_avatar  <span class="info">发布创客的头像</span></li>
+            <li>text         <span class="info">评论内容</span></li>
+            <!--li>photo        <span class="info">评论附图, 数组</span></li!-->
+            <li>liked        <span class="info">点赞数</span></li>
+            <!--li>reply_count  <span class="info">子评论数量</span></li!-->
+          </ul>
+        </li>
+       </ul>
+      </li>
+    </ul>

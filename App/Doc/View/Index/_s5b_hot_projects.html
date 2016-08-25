@@ -1,0 +1,59 @@
+  <h2>5b.热门众筹</h2>
+    接口地址：测试url<br>
+    请求方式：POST
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <include file='_repeat_req' />
+      <tr>
+        <td>service</td>
+        <td>文本</td>
+        <td>是</td>
+        <td>hot_projects</td>
+      </tr>
+      <tr>
+        <td>my_user_id</td>
+        <td>文本</td>
+        <td>否</td>
+        <td>当前用户的user_id</td>
+      </tr>
+    </table>
+    <p>返回JSON值说明：</p>
+    <ul>
+      <li>res <span class="info">状态，true/false 请求成功或者失败的判别</span></li>
+      <li>msg <span class="info">消息</span></li>
+      <li>code <span class="info">特定情况下返回，001签名错误，002必须参数不完整(参数为空)</span></li>
+      <li>data <span class="info">众筹列表, 数组, 包含多个【众筹元数据】</span>
+        <ul>
+        <li>total <span class="info">累计值, 数组, 包含累计筹资和累计支持数</span>
+          <ul>
+            <li>money <span class="info">累计筹资</span></li>
+            <li>support <span class="info">累计支持数</span></li>
+          </ul>
+        </li>  
+        </ul>
+        <ul>
+        <li>bottom <span class="info">底部图片, 数组, 包含图片URL和跳转URL</span>
+          <ul>
+            <li>photo_url <span class="info">图片URL</span></li>
+            <li>jump_url <span class="info">跳转URL</span></li>
+          </ul>
+        </li>
+        </ul>  
+        <ul><li>branch_name <span class="info">分类名, 数组, 包含所有的分类名称</span></li></ul>  
+        <ul><li>branch_image <span class="info">分类图片, 数组, 包含所有的分类对应的图片url（ios，ndr）</span></li></ul>  
+         <ul>
+          <li>热门元数据 <span class="info">同接口 <a href="#4">5.发现</a></span></li>
+         </ul>
+         <ul>
+          <li>智能硬件元数据 <span class="info">同接口 <a href="#4">5.发现</a></span></li>
+         </ul>
+         <ul>
+          <li>虚拟现实元数据 <span class="info">同接口 <a href="#4">5.发现</a></span></li>
+         </ul>
+         <ul>
+          <li>机器人元数据 <span class="info">同接口 <a href="#4">5.发现</a></span></li>
+         </ul>
+         <ul>
+          <li>设计元数据 <span class="info">同接口 <a href="#4">5.发现</a></span></li>
+         </ul>
+     </li>
+    </ul>

@@ -1,0 +1,57 @@
+  <h2>71.我的消息</h2>
+    接口地址：测试url<br>
+    请求方式：POST
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+      <include file='_repeat_req' />
+      <tr>
+        <td>service</td>
+        <td>文本</td>
+        <td>是</td>
+        <td>my_message</td>
+      </tr>
+      <tr>
+        <td>my_user_id</td>
+        <td>文本</td>
+        <td>是</td>
+        <td>当前用户的user_id</td>
+      </tr>
+    </table>
+    <p>返回JSON值说明：</p>
+    <ul>
+      <li>res <span class="info">状态，true/false 请求成功或者失败的判别</span></li>
+      <li>msg <span class="info">消息</span></li>
+      <li>code <span class="info">特定情况下返回，001签名错误，002必须参数不完整(参数为空)</span></li>
+      <li>data <span class="info">我的消息</span>
+        <ul>
+          <li>message_sum<span class="info"> 未读消息总数</span></li>
+          <li>push<span class="info">   系统推送数据</span>
+            <ul>
+              <li>message_sum<span class="info"> 未读消息总数</span></li>
+              <li>last_message_time<span class="info">   最近一条消息的时间</span></li>
+              <li>last_message_desc<span class="info">   最近一条消息的描述</span></li>
+            </ul>
+          </li>
+          <li>comment<span class="info">   评论通知数据</span>
+            <ul>
+              <li>message_sum<span class="info"> 未读消息总数</span></li>
+              <li>last_message_time<span class="info">   最近一条消息的时间</span></li>
+              <li>last_message_desc<span class="info">   最近一条消息的描述</span></li>
+            </ul>
+          </li>
+          <li>like<span class="info">   点赞通知数据</span>
+            <ul>
+              <li>message_sum<span class="info"> 未读消息总数</span></li>
+              <li>last_message_time<span class="info">   最近一条消息的时间</span></li>
+              <li>last_message_desc<span class="info">   最近一条消息的描述</span></li>
+            </ul>
+          </li>
+          <li>follow<span class="info">   关注通知数据</span>
+            <ul>
+              <li>message_sum<span class="info"> 未读消息总数</span></li>
+              <li>last_message_time<span class="info">   最近一条消息的时间</span></li>
+              <li>last_message_desc<span class="info">   最近一条消息的描述</span></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
